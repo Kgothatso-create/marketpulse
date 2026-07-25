@@ -1,0 +1,56 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'weather/css/style.css' %}">
+
+<div class="weather-container">
+
+    <div class="weather-card">
+
+        <div class="weather-main">
+
+            <div class="location">
+                {{ location.city }}
+            </div>
+
+            <div class="time">
+                {{ current_weather.timezone }}
+            </div>
+
+            <div class="time">
+                <div>{{ current_weather.current_time }}</div>
+                <small>{{ current_weather.current_date }}</small>
+            </div>
+
+            <div class="temperature">
+                {{ current_weather.temperature }} °C
+            </div>
+
+            <div class="wind">
+                Wind: {{ current_weather.wind_speed }} km/h
+            </div>
+
+        </div>
+
+
+        <div class="forecast">
+
+            {% for day, max_temp, min_temp, code in weeks_weather.forecast %}
+
+                <div class="forecast-day">
+                    <h3>{{ day }}</h3>
+
+                    <p>{{ max_temp|floatformat:0 }}°</p>
+
+                    <small>
+                        Low: {{ min_temp|floatformat:0 }}°
+                    </small>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
