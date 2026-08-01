@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'weather',
-    'markets',
+    'exchangerate',
 ]
 
 MIDDLEWARE = [
