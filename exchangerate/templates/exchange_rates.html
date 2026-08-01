@@ -1,76 +1,103 @@
+{% load static %}
 
+<link rel="stylesheet" href="{% static 'css/exchange_rates.css' %}">
 
-<div class="container mt-4">
+<div class="exchange-widget">
 
-    <h2>{{ currency.code }} Exchange Rates</h2>
-
-    <div class="card mb-4">
-        <div class="card-header">
-            Base Currency
+    <div class="exchange-header">
+        <div>
+            <h2>{{ currency.code }} Market Rates</h2>
+            <p>
+                Live currency exchange rates
+            </p>
         </div>
 
-        <div class="card-body">
-            <table class="table table-borderless mb-0">
-                <tbody>
-                    <tr>
-                        <th>Code</th>
-                        <td>{{ currency.code }}</td>
-                    </tr>
-                    {% if currency.name %}
-                    <tr>
-                        <th>Name</th>
-                        <td>{{ currency.name }}</td>
-                    </tr>
-                    {% endif %}
-                </tbody>
-            </table>
+        <div class="currency-badge">
+            {{ currency.code }}
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-header">
+
+    <div class="exchange-summary">
+
+        <div class="summary-card">
+            <span>Base Currency</span>
+            <strong>{{ currency.code }}</strong>
+        </div>
+
+        {% if currency.name %}
+        <div class="summary-card">
+            <span>Currency Name</span>
+            <strong>{{ currency.name }}</strong>
+        </div>
+        {% endif %}
+
+        <div class="summary-card">
+            <span>Total Rates</span>
+            <strong>{{ exchange_rates|length }}</strong>
+        </div>
+
+    </div>
+
+
+    <div class="rates-card">
+
+        <div class="rates-title">
             Exchange Rates
         </div>
 
-        <div class="card-body p-0">
+        <div class="table-responsive">
 
-            <table class="table table-striped table-hover mb-0">
+            <table class="rates-table">
+
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Base Currency</th>
-                        <th>Quote Currency</th>
-                        <th>Exchange Rate</th>
+                        <th>Base</th>
+                        <th>Quote</th>
+                        <th>Rate</th>
                     </tr>
                 </thead>
 
+
                 <tbody>
 
-                    {% for rate in exchange_rates %}
+                {% for rate in exchange_rates %}
 
                     <tr>
                         <td>{{ rate.date }}</td>
-                        <td>{{ rate.base }}</td>
-                        <td>{{ rate.quote }}</td>
-                        <td>{{ rate.rate }}</td>
+
+                        <td>
+                            <span class="base-currency">
+                                {{ rate.base }}
+                            </span>
+                        </td>
+
+                        <td>
+                            {{ rate.quote }}
+                        </td>
+
+                        <td class="rate-value">
+                            {{ rate.rate }}
+                        </td>
                     </tr>
 
-                    {% empty %}
+                {% empty %}
 
                     <tr>
-                        <td colspan="4" class="text-center">
+                        <td colspan="4" class="empty-state">
                             No exchange rates available.
                         </td>
                     </tr>
 
-                    {% endfor %}
+                {% endfor %}
 
                 </tbody>
 
             </table>
 
         </div>
+
     </div>
 
 </div>
-
