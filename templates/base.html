@@ -1,59 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>{% block title %}MarketPulse | Financial Intelligence{% endblock %}</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'themes/css/base.css' %}">
-
     {% block styles %}{% endblock %}
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-lg market-navbar">
         <div class="container">
-
             <a class="navbar-brand" href="{% url 'dashboard:index' %}">
                 <span class="brand-mark">M</span>
                 Market<span>Pulse</span>
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="mainNavbar">
-
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'dashboard:index' %}">
-                            Dashboard
+                        <a class="nav-link" href="{% url 'dashboard:road_map' %}">
+                            Development Road Map
                         </a>
                     </li>
-
                 </ul>
-
             </div>
-
         </div>
     </nav>
-
     <main class="main-content">
         {% block content %}{% endblock %}
     </main>
-
     <footer class="market-footer">
         <div class="container">
             <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
@@ -62,10 +44,7 @@
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
     {% block scripts %}{% endblock %}
-
 </body>
 </html>

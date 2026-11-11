@@ -3,21 +3,64 @@
 {% block content %}
 
 <div class="container mt-4">
-
     <h1>MarketPulse Dashboard</h1>
-
     <div class="row g-4">
-
         <div class="col-lg-6">
-            {% include "current_weather.html" %}
+            <div id="weather-container">
+                {% include "current_weather.html" %}
+            </div>
         </div>
-
         <div class="col-lg-6">
-            {% include "exchange_rates.html" %}
+            <div id="exchange-rates-container">
+                {% include "exchange_rates.html" %}
+            </div>
         </div>
 
     </div>
 
 </div>
 
+{% endblock %}
+{% block scripts %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("exchange-rates-container");
+
+    if (!container) return;
+
+    container.addEventListener("click", async function (event) {
+        const button = event.target.closest(".currency-option");
+
+        if (!button) return;
+
+        event.preventDefault();
+
+        const url = button.getAttribute("href");
+
+        try {
+            container.style.opacity = "0.5";
+
+            const response = await fetch(url, {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Unable to retrieve exchange rates.");
+            }
+
+            const html = await response.text();
+
+            container.innerHTML = html;
+            container.style.opacity = "1";
+
+        } catch (error) {
+            console.error(error);
+            container.style.opacity = "1";
+        }
+    });
+});
+</script>
 {% endblock %}

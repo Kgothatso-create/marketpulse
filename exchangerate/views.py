@@ -29,3 +29,18 @@ def display_exchange_rates(
     }
 
     return render(request, "exchange_rates.html", context)
+
+
+def detail(request, code):
+    currency = get_object_or_404(Currency, code=code.upper())
+
+    exchange_rates = ...  # Your existing exchange-rate service
+    exchange_rates = get_exchange_rates(base=currency.code)
+
+    context = {
+        "currency": currency,
+        "currencies": Currency.objects.all(),
+        "exchange_rates": exchange_rates,
+    }
+
+    return render(request, "exchange_rates.html", context)

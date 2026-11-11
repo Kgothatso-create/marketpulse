@@ -133,3 +133,89 @@
     padding: 30px;
     color: #6b7280;
 }
+
+/* Currency Options */
+.currency-options {
+    margin-bottom: 28px;
+}
+
+.currency-options-header {
+    margin-bottom: 14px;
+}
+
+.currency-options-header h5 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.currency-options-header span {
+    color: #8994a7;
+    font-size: 12px;
+}
+
+.currency-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.currency-option {
+    display: flex;
+    flex-direction: column;
+    min-width: 105px;
+    padding: 12px 16px;
+    text-decoration: none;
+    background: #172235;
+    border: 1px solid #29364b;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+.currency-option:hover {
+    background: #202e43;
+    border-color: #bf9b30;
+    transform: translateY(-2px);
+}
+
+.currency-option.active {
+    background: rgba(191, 155, 48, 0.12);
+    border-color: #bf9b30;
+}
+
+.currency-option-code {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.currency-option.active .currency-option-code {
+    color: #d6b34f;
+}
+
+.currency-option-name {
+    color: #8994a7;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 576px) {
+    .currency-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .currency-option {
+        min-width: 0;
+        padding: 11px 12px;
+    }
+
+    .currency-options {
+        margin-bottom: 22px;
+    }
+}

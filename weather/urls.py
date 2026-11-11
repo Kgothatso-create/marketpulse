@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import *
+from . import views
 
-namespace = "weather"
+app_name = "weather"
 
 urlpatterns = [
-    path('', current_weather, name='current_weather'),
+    path('', views.current_weather, name='current_weather'),
+    path("<str:city>/", views.detailed_weather, name="detailed_weather"),
 ]

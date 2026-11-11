@@ -1,0 +1,454 @@
+
+{% extends "base.html" %}
+
+{% block title %}MarketPulse | Development Roadmap{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Page Heading -->
+    <div class="mb-4">
+        <h1 class="section-title">Development Roadmap</h1>
+        <p class="section-subtitle">
+            Follow the development journey of MarketPulse, from its
+            initial API integrations to a comprehensive financial
+            intelligence platform.
+        </p>
+    </div>
+
+    <!-- Project Overview -->
+    <div class="market-card p-4 mb-4">
+        <div class="row align-items-center g-3">
+
+            <div class="col-lg-8">
+                <h4 class="fw-bold mb-2">About MarketPulse</h4>
+
+                <p class="mb-0">
+                    MarketPulse is an API-focused financial intelligence
+                    dashboard designed to aggregate information from
+                    different data providers into one central platform.
+
+                    The project aims to integrate financial markets,
+                    cryptocurrency, economic indicators, financial news
+                    and other useful data services.
+                </p>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="row text-center g-3">
+
+                    <div class="col-6">
+                        <h3 class="fw-bold mb-0">2</h3>
+                        <small class="text-muted">APIs Integrated</small>
+                    </div>
+
+                    <div class="col-6">
+                        <h3 class="fw-bold mb-0">3</h3>
+                        <small class="text-muted">Django Apps</small>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Status Legend -->
+    <div class="d-flex flex-wrap gap-3 mb-4">
+        <span class="badge bg-success">Completed</span>
+        <span class="badge bg-warning text-dark">In Progress</span>
+        <span class="badge bg-secondary">Planned</span>
+    </div>
+
+    <!-- Completed -->
+    <div class="mb-5">
+
+        <h4 class="section-title mb-3">
+            <i class="fas fa-check-circle text-success me-2"></i>
+            Completed Milestones
+        </h4>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-success mb-2">Completed</span>
+
+                    <h5 class="fw-bold">Weather Integration</h5>
+
+                    <p class="text-muted mb-2">
+                        Integrated Open-Meteo to retrieve weather
+                        information and forecasts for selected locations.
+                    </p>
+
+                    <small class="text-muted">
+                        Application: Weather
+                    </small>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-success mb-2">Completed</span>
+
+                    <h5 class="fw-bold">Currency Exchange Integration</h5>
+
+                    <p class="text-muted mb-2">
+                        Integrated Frankfurter to retrieve currency
+                        exchange rates and support currency comparisons.
+                    </p>
+
+                    <small class="text-muted">
+                        Application: Exchange Rate
+                    </small>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-success mb-2">Completed</span>
+
+                    <h5 class="fw-bold">Dashboard Foundation</h5>
+
+                    <p class="text-muted mb-2">
+                        Developed the initial dashboard to bring
+                        weather and currency information together.
+                    </p>
+
+                    <small class="text-muted">
+                        Application: Dashboard
+                    </small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- In Progress -->
+    <div class="mb-5">
+
+        <h4 class="section-title mb-3">
+            <i class="fas fa-spinner text-warning me-2"></i>
+            Currently In Development
+        </h4>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-warning text-dark mb-2">
+                        In Progress
+                    </span>
+
+                    <h5 class="fw-bold">Interactive Dashboard</h5>
+
+                    <p class="text-muted mb-0">
+                        Improve dashboard functionality with interactive
+                        selections, dynamic data and improved navigation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-warning text-dark mb-2">
+                        In Progress
+                    </span>
+
+                    <h5 class="fw-bold">Mobile Responsiveness</h5>
+
+                    <p class="text-muted mb-0">
+                        Improve the layout and usability of all dashboard
+                        components across mobile devices and tablets.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Planned -->
+    <div class="mb-5">
+
+        <h4 class="section-title mb-3">
+            <i class="fas fa-rocket text-secondary me-2"></i>
+            Planned Development
+        </h4>
+
+        <div class="row g-3">
+
+            <!-- Cryptocurrency -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Cryptocurrency Tracking</h5>
+
+                    <p class="text-muted">
+                        Integrate cryptocurrency market data to display
+                        digital asset prices, market capitalisation,
+                        price movements and historical performance.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Bitcoin and Ethereum tracking</li>
+                        <li>Cryptocurrency price comparisons</li>
+                        <li>Market capitalisation</li>
+                        <li>Historical price charts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Financial News -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Financial News</h5>
+
+                    <p class="text-muted">
+                        Integrate financial news services to provide
+                        information about global markets, companies
+                        and economic developments.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Global financial headlines</li>
+                        <li>Market developments</li>
+                        <li>Company-related news</li>
+                        <li>Economic news</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Stock Market -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Stock Market Data</h5>
+
+                    <p class="text-muted">
+                        Retrieve stock market information and company
+                        performance from available financial data providers.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Stock prices</li>
+                        <li>Company information</li>
+                        <li>Market indices</li>
+                        <li>Historical stock performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Commodities -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Commodity Prices</h5>
+
+                    <p class="text-muted">
+                        Expand financial market coverage with commodity
+                        pricing information.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Gold and silver</li>
+                        <li>Crude oil</li>
+                        <li>Natural gas</li>
+                        <li>Other available commodities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Economic Indicators -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Economic Indicators</h5>
+
+                    <p class="text-muted">
+                        Integrate economic statistics to provide
+                        insights into national and global economies.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Inflation rates</li>
+                        <li>GDP and economic growth</li>
+                        <li>Unemployment statistics</li>
+                        <li>Interest rates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Company Fundamentals -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Company Financial Data</h5>
+
+                    <p class="text-muted">
+                        Retrieve publicly available company financial
+                        information and performance metrics.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Company profiles</li>
+                        <li>Revenue and earnings</li>
+                        <li>Profitability metrics</li>
+                        <li>Financial statements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Financial Calendar -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Economic & Financial Calendar</h5>
+
+                    <p class="text-muted">
+                        Display important financial and economic events
+                        from available calendar data services.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Economic announcements</li>
+                        <li>Company earnings dates</li>
+                        <li>Central bank announcements</li>
+                        <li>Market events</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Fuel Prices -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Fuel & Energy Prices</h5>
+
+                    <p class="text-muted">
+                        Explore available fuel and energy pricing data,
+                        including international and South African
+                        price information.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Petrol and diesel prices</li>
+                        <li>International oil prices</li>
+                        <li>Energy market information</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Country Data -->
+            <div class="col-md-6">
+                <div class="market-card p-3 h-100">
+                    <span class="badge bg-secondary mb-2">Planned</span>
+
+                    <h5 class="fw-bold">Country & Global Statistics</h5>
+
+                    <p class="text-muted">
+                        Expand the dashboard with country-level
+                        information and international statistics.
+                    </p>
+
+                    <ul class="small text-muted mb-0">
+                        <li>Country information</li>
+                        <li>Population statistics</li>
+                        <li>Demographics</li>
+                        <li>Public holidays</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Technical Improvements -->
+    <div class="mb-5">
+
+        <h4 class="section-title mb-3">
+            <i class="fas fa-code me-2"></i>
+            Technical Improvements
+        </h4>
+
+        <div class="market-card p-4">
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <h6 class="fw-bold">API Architecture</h6>
+                    <p class="text-muted mb-0">
+                        Centralised API service modules, reusable
+                        integrations, error handling and timeouts.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="fw-bold">Caching & Performance</h6>
+                    <p class="text-muted mb-0">
+                        Implement caching and efficient API request
+                        management to reduce unnecessary external calls.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="fw-bold">Data Visualisation</h6>
+                    <p class="text-muted mb-0">
+                        Interactive charts, historical comparisons
+                        and financial trend visualisations.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="fw-bold">Data Reliability</h6>
+                    <p class="text-muted mb-0">
+                        Improved API validation, fallback mechanisms
+                        and handling of unavailable services.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="fw-bold">Dashboard Customisation</h6>
+                    <p class="text-muted mb-0">
+                        Customisable dashboard widgets and
+                        personalised financial watchlists.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <h6 class="fw-bold">Testing & Documentation</h6>
+                    <p class="text-muted mb-0">
+                        Automated tests, API documentation and
+                        improved application maintainability.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Project Direction -->
+    <div class="market-card p-4 text-center mb-4">
+        <h4 class="fw-bold">The Vision</h4>
+
+        <p class="text-muted mb-0">
+            To develop MarketPulse into a comprehensive financial
+            intelligence platform by integrating multiple data
+            providers and transforming external data into useful,
+            accessible and interactive information.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}
