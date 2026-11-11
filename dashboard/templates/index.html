@@ -21,46 +21,65 @@
 </div>
 
 {% endblock %}
-{% block scripts %}
 
+{% block scripts %}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("exchange-rates-container");
-
-    if (!container) return;
-
-    container.addEventListener("click", async function (event) {
-        const button = event.target.closest(".currency-option");
-
-        if (!button) return;
-
-        event.preventDefault();
-
-        const url = button.getAttribute("href");
-
-        try {
-            container.style.opacity = "0.5";
-
-            const response = await fetch(url, {
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest"
+    // Exchange Rate AJAX
+    const exchangeContainer = document.getElementById("exchange-rates-container");
+    if (exchangeContainer) {
+        exchangeContainer.addEventListener("click", async function (event) {
+            const button = event.target.closest(".currency-option");
+            if (!button) return;
+            event.preventDefault();
+            const url = button.getAttribute("href");
+            try {
+                exchangeContainer.style.opacity = "0.5";
+                const response = await fetch(url, {
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error("Unable to retrieve exchange rates.");
                 }
-            });
-
-            if (!response.ok) {
-                throw new Error("Unable to retrieve exchange rates.");
+                const html = await response.text();
+                exchangeContainer.innerHTML = html;
+            } catch (error) {
+                console.error(error);
+            } finally {
+                exchangeContainer.style.opacity = "1";
             }
+        });
+    }
 
-            const html = await response.text();
-
-            container.innerHTML = html;
-            container.style.opacity = "1";
-
-        } catch (error) {
-            console.error(error);
-            container.style.opacity = "1";
-        }
-    });
+    // Weather AJAX
+    const weatherContainer = document.getElementById("weather-container");
+    if (weatherContainer) {
+        weatherContainer.addEventListener("click", async function (event) {
+            const button = event.target.closest(".weather-option");
+            if (!button) return;
+            event.preventDefault();
+            const url = button.getAttribute("href");
+            try {
+                weatherContainer.style.opacity = "0.5";
+                const response = await fetch(url, {
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error("Unable to retrieve weather information.");
+                }
+                const html = await response.text();
+                weatherContainer.innerHTML = html;
+            } catch (error) {
+                console.error(error);
+            } finally {
+                weatherContainer.style.opacity = "1";
+            }
+        });
+    }
 });
 </script>
 {% endblock %}
